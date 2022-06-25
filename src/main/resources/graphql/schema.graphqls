@@ -1,0 +1,22 @@
+type Query {
+    customers: [Customer!]!
+}
+
+type Mutation {
+    registerCustomer(command: RegisterCustomerCommand): String
+    changePassword(command: ChangePasswordCommand): String
+}
+
+type Customer {
+    customerId: String
+    password: String
+}
+
+input RegisterCustomerCommand {
+    customerId: String
+}
+
+input ChangePasswordCommand {
+    customerId: String
+    newPassword: String
+}
